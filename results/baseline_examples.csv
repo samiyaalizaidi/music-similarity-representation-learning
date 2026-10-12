@@ -1,0 +1,16 @@
+query_track_id,rank,track_id,title,artist,genre,cosine_similarity,same_genre
+182,1,119086,Battle Hymn Of The Children,FortyOne,Experimental,0.44259440898895264,False
+182,2,131770,Babe,Microscopes,Pop,0.4291590452194214,False
+182,3,4522,Oceanus,High Places,Electronic,0.4234960079193115,False
+182,4,126221,Naram​-​Sin,Ø+yn + GMC,Experimental,0.42324692010879517,False
+182,5,58140,Travel On,John Bellows,Folk,0.41653329133987427,False
+704,1,75929,Dark Kingdom,Tricky Diesel,Hip-Hop,0.5937342643737793,False
+704,2,141561,Please Listen,Yshwa,Hip-Hop,0.569557249546051,False
+704,3,130709,Silly Guy,Jimmy & The Threats,Hip-Hop,0.5614016652107239,False
+704,4,69563,Good Time,The NSJ Crew,Hip-Hop,0.5486165285110474,False
+704,5,142567,Fell it,GOYMAMBA,International,0.5301489233970642,True
+705,1,85822,Nocturnia,Psychadelik Pedestrian,Electronic,0.6008018255233765,False
+705,2,53159,Spy VS Spy,Ras Amerlock,International,0.5971298813819885,True
+705,3,110265,Fact Is Remix (J. Glaze and Udachi Remix),Kellee Maize & J. Glaze & Udachi,Hip-Hop,0.5933331847190857,False
+705,4,75935,Still Balling,Tricky Diesel,Hip-Hop,0.5746217370033264,False
+705,5,69824,Lucky you (Digi G'Alessio remix remix),Infinite Livez,Hip-Hop,0.544590950012207,False
