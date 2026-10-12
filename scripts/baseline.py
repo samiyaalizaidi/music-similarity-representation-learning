@@ -8,7 +8,7 @@ from sklearn.neighbors import NearestNeighbors
 
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument('--processed-dir', type=Path, default=Path('data/processed'))
+    parser.add_argument('--processed-dir', type=Path, default=Path(__file__).resolve().parents[1] / 'data' / 'processed')
     parser.add_argument('--track-id', type=int, default=None)
     parser.add_argument('--k', type=int, default=10)
     args = parser.parse_args()

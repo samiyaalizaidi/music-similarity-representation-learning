@@ -19,8 +19,8 @@ def load_fma(data_dir: Path):
 
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument('--data-dir', type=Path, default=Path('data/fma_metadata'))
-    parser.add_argument('--output-dir', type=Path, default=Path('data/processed'))
+    parser.add_argument('--data-dir', type=Path, default=Path(__file__).resolve().parents[1] / 'data' / 'fma_metadata')
+    parser.add_argument('--output-dir', type=Path, default=Path(__file__).resolve().parents[1] / 'data' / 'processed')
     args = parser.parse_args()
     args.output_dir.mkdir(parents=True, exist_ok=True)
 
