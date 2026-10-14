@@ -1,0 +1,4 @@
+representation,embedding_dim,k,n_queries,genre_consistency_at_k,tag_overlap_at_k,cross_genre_fraction,cross_genre_tag_overlap,cross_genre_with_shared_tags
+original,518,10,500,0.4518,0.048,0.5482,0.0,0.0
+pca,16,10,500,0.3656,0.0302,0.6344,0.0,0.0
+autoencoder,16,10,500,0.311,0.026,0.689,0.0,0.0
