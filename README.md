@@ -46,3 +46,31 @@ The last command only works if track ID 123 is in the test split; substitute a r
 - Genre consistency is an illustrative proxy metric, **not** a ground-truth measure of perceptual similarity.
 - Tags are retained as metadata for later evaluation; verify their availability and quality before treating tag overlap as a main metric.
 - PCA is deliberately postponed.
+
+## Milestone 2: Results and Findings
+
+Milestone 2 compares three music representations: original FMA features (518D), PCA (16D), and autoencoder embeddings (16D). All models use the same 800 test queries, 6,400 training candidates, and cosine similarity for top-10 retrieval.
+
+### Retrieval Results
+
+| Representation | Genre Consistency@10 | Cross-Genre Retrieval@10 |
+|---|---:|---:|
+| Original Features | 31.72% | 68.28% |
+| PCA | 28.74% | 71.26% |
+| Autoencoder | 26.26% | 73.74% |
+
+The autoencoder achieved the highest cross-genre retrieval rate (73.74%), outperforming the original features by 5.46 percentage points. PCA retained 50.92% of feature variance, while the autoencoder achieved a test reconstruction MSE of 0.6370.
+
+### Tag Similarity Evaluation
+
+| Metric | Original | PCA | Autoencoder |
+|---|---:|---:|---:|
+| Tag Overlap | 0.0473 | 0.0529 | 0.0467 |
+| Cross-Genre Tag Overlap | 0.0088 | 0.0066 | 0.0068 |
+| Tag Coverage | 3.69% | 3.52% | 3.84% |
+
+### Key Findings
+
+The autoencoder retrieves more cross-genre tracks, suggesting that learned embeddings organize musical relationships differently from the original features. However, it does not improve tag overlap, and sparse metadata limits evaluation.
+
+**Conclusion:** Learned representations change similarity retrieval patterns, but further analysis is needed to determine whether cross-genre matches reflect meaningful musical similarity.
