@@ -74,3 +74,24 @@ The autoencoder achieved the highest cross-genre retrieval rate (73.74%), outper
 The autoencoder retrieves more cross-genre tracks, suggesting that learned embeddings organize musical relationships differently from the original features. However, it does not improve tag overlap, and sparse metadata limits evaluation.
 
 **Conclusion:** Learned representations change similarity retrieval patterns, but further analysis is needed to determine whether cross-genre matches reflect meaningful musical similarity.
+
+### Audio-Based Similarity Evaluation
+
+To further evaluate retrieval quality, we processed FMA-small MP3 recordings using `librosa` and extracted audio descriptors, including tempo, energy, spectral characteristics, chroma, and MFCCs. We evaluated 100 test queries and compared the three representations against a random cross-genre baseline.
+
+| Metric (Lower is Better) | Original | PCA | Autoencoder | Random |
+|---|---:|---:|---:|---:|
+| Audio-Descriptor Distance | **0.7682** | 0.7821 | 0.8006 | 1.0517 |
+| Tempo Difference (BPM) | 22.55 | 22.96 | **22.35** | 23.93 |
+| RMS Energy Difference | **0.0787** | 0.0876 | 0.0866 | 0.1099 |
+| Spectral Centroid Difference (Hz) | 517.46 | **485.94** | 514.00 | 767.97 |
+
+**Key Findings:**
+- All three representations retrieved tracks with closer audio characteristics than the random baseline.
+- Original features achieved the best overall audio-descriptor similarity, while PCA performed best on spectral centroid similarity.
+- The autoencoder achieved the lowest tempo difference but did not outperform the original features overall.
+- Although the autoencoder produced the highest cross-genre retrieval rate (73.74%) in earlier experiments, this did not translate into better overall audio similarity.
+
+**Conclusion:** The results suggest that dimensionality reduction changes retrieval behavior but may discard useful audio information. Further evaluation will focus on cross-genre-only comparisons and qualitative listening analysis.
+
+*Note: These are preliminary results from 100 queries. The random baseline contains only cross-genre pairs, whereas model retrieval includes both same-genre and cross-genre pairs.*
